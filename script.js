@@ -1,4 +1,3 @@
-
 "use strict";
 
 /* ---------- 1. ELEMENTS & KATB KETAB DETAILS ---------- */
@@ -35,9 +34,9 @@ const KATB_KETAB = {
     groom: "Mohamed",
     bride: "Dina",
     date: "2026-10-30",
-    time: "20:00",
-    venue: "مسجد آل رشدان",
-    location: "مسجد آل رشدان، مدينة نصر، القاهرة، مصر",
+    time: "19:00",
+    venue: "قاعة النور بجوار مسجد آل رشدان",
+    location: "قاعة النور بجوار مسجد آل رشدان، مدينة نصر، القاهرة، مصر",
     formspreeEndpoint: "https://formspree.io/f/xkjoyaob"
 };
 
@@ -155,10 +154,10 @@ if (musicButton && weddingMusic) {
 
 /* ---------- 4. COUNTDOWN ---------- */
 
-// الجمعة 30 أكتوبر 2026، الساعة 8 مساءً بتوقيت القاهرة.
+// الجمعة 30 أكتوبر 2026، الساعة 7 مساءً بتوقيت القاهرة.
 // استخدام offset +02:00 يحدد الموعد صراحةً دون الاعتماد على توقيت الجهاز.
 const katbKetabDate = new Date(
-    "2026-10-30T20:00:00+02:00"
+    "2026-10-30T19:00:00+02:00"
 ).getTime();
 
 const countdownElements = {
@@ -284,15 +283,15 @@ if (calendarButton) {
     calendarButton.addEventListener("click", () => {
         const title = "Mohamed & Dina — Katb Ketab";
 
-        // موعد كتب الكتاب: 8 مساءً إلى 10 مساءً.
-        const start = "20261030T200000";
-        const end = "20261030T220000";
+        // موعد كتب الكتاب: 7 مساءً إلى 9 مساءً.
+        const start = "20261030T190000";
+        const end = "20261030T210000";
 
         const details = [
             "دعوة لحضور كتب كتاب محمد ودينا",
             "التاريخ: الجمعة 30 أكتوبر 2026",
-            "الوقت: الساعة 8 مساءً بتوقيت القاهرة",
-            "المكان: مسجد آل رشدان، مدينة نصر، القاهرة"
+            "الوقت: الساعة 7 مساءً بتوقيت القاهرة",
+            "المكان: قاعة النور بجوار مسجد آل رشدان، مدينة نصر، القاهرة"
         ].join("\n");
 
         const params = new URLSearchParams({
@@ -820,7 +819,7 @@ function fixMapsLink() {
         encodeURIComponent(KATB_KETAB.location);
 
     mapsLinks.forEach((link) => {
-        // نصحح الرابط الموجود على زر الخريطة إلى مسجد آل رشدان.
+        // نصحح الرابط الموجود على زر الخريطة إلى قاعة النور بجوار مسجد آل رشدان.
         link.href = mapsSearchUrl;
         link.target = "_blank";
         link.rel = "noopener noreferrer";
